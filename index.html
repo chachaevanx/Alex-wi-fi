@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092b4b">
+<title>Chacha Wi-Fi | Unlimited Internet</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f7fc;
+  color: #172c40;
+}
+
+header {
+  background: #092b4b;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(120deg,#092b4b,#1476bd);
+  color: white;
+  text-align: center;
+  padding: 55px 20px 75px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.hero p {
+  line-height: 1.7;
+}
+
+.hero .welcome {
+  font-size: 17px;
+  color: #b9f1ff;
+}
+
+main {
+  max-width: 1050px;
+  margin: -30px auto 40px;
+  padding: 0 15px;
+}
+
+.welcome-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #092b4b15;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #092b4b;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #687b8c;
+  margin-bottom: 20px;
+}
+
+.device-options {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.device-options button {
+  padding: 12px 18px;
+  border: 1px solid #1476bd;
+  border-radius: 10px;
+  background: white;
+  color: #1476bd;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.device-options button.active {
+  background: #1476bd;
+  color: white;
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.package {
+  background: white;
+  border: 1px solid #dce7ef;
+  border-radius: 16px;
+  padding: 20px;
+  transition: .2s;
+}
+
+.package:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #092b4b15;
+}
+
+.package.selected {
+  border: 2px solid #1476bd;
+}
+
+.package h3 {
+  color: #092b4b;
+}
+
+.price {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #1476bd;
+}
+
+.package p {
+  color: #16865b;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.package button {
+  width: 100%;
+  background: #1476bd;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.selection {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: 25px;
+  box-shadow: 0 5px 20px #092b4b10;
+}
+
+.selection h3 {
+  color: #092b4b;
+  margin-bottom: 10px;
+}
+
+#selectedPackage {
+  color: #1476bd;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.payment {
+  background: #c5d0d9;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.info-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #dce7ef;
+}
+
+.info-card h3 {
+  color: #092b4b;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  color: #687b8c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.support {
+  margin-top: 25px;
+  background: #e5f3fc;
+  padding: 22px;
+  border-radius: 15px;
+}
+
+.support a {
+  display: inline-block;
+  margin-top: 12px;
+  background: #16865b;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+footer {
+  background: #092b4b;
+  color: white;
+  text-align: center;
+  padding: 23px;
+  font-size: 14px;
+}
+
+@media(max-width:700px) {
+  .packages {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+@media(max-width:380px) {
+  .packages {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">📶 CHACHA WI-FI</div>
+    <div>✨ Unlimited Internet</div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="welcome">👋 KARIBU! WELCOME TO CHACHA WI-FI</div>
+  <h1>Stay Connected.<br>Go Further.</h1>
+  <p>⚡ Fast connection | ♾️ Unlimited data | 🔒 Device-based access</p>
+  <p>Affordable internet for everyone.</p>
+</section>
+
+<main>
+
+<section class="welcome-card">
+  <h2>😊 Welcome aboard!</h2>
+  <p>Select your preferred internet package and the number of devices you want to connect.</p>
+</section>
+
+<section>
+  <h2>🌐 Choose Your Package</h2>
+  <p class="subtitle">All prices are in Kenyan Shillings (KSh).</p>
+
+  <div class="device-options">
+    <button class="active" id="oneDevice" onclick="changeDevices(1)">
+      📱 1 Device
+    </button>
+
+    <button id="twoDevices" onclick="changeDevices(2)">
+      📱📱 2 Devices
+    </button>
+  </div>
+
+  <div class="packages" id="packages"></div>
+</section>
+
+<section class="selection">
+  <h3>🛒 Your Selection</h3>
+  <p id="selectedPackage">Please select a package above.</p>
+
+  <button class="payment" disabled>
+    💳 M-Pesa STK Push — Coming Soon
+  </button>
+  <p style="text-align:center;color:#687b8c;font-size:12px;margin-top:8px">
+    Online payments will be activated in a future update.
+  </p>
+</section>
+
+<section class="info">
+  <div class="info-card">
+    <h3>♾️ Unlimited Data</h3>
+    <p>Enjoy unlimited internet throughout your package validity period.</p>
+  </div>
+
+  <div class="info-card">
+    <h3>🔐 Device Protection</h3>
+    <p>Packages are limited to the selected number of registered devices.</p>
+  </div>
+
+  <div class="info-card">
+    <h3>⏰ Package Duration</h3>
+    <p>Your package duration starts when internet access is activated.</p>
+  </div>
+</section>
+
+<section class="support">
+  <h2>💬 Need Assistance?</h2>
+  <p>Our customer support team is available on WhatsApp.</p>
+  <a href="https://wa.me/254796914618" target="_blank">
+    🟢 Contact Chacha Wi-Fi
+  </a>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Chacha Wi-Fi.
+  All Rights Reserved. 💙
+</footer>
+
+<script>
+const packages = [
+  {id:"1h", duration:"1 Hour", one:10, two:20},
+  {id:"3h", duration:"3 Hours", one:15, two:20},
+  {id:"6h", duration:"6 Hours", one:20, two:30},
+  {id:"16h", duration:"16 Hours", one:25, two:40},
+  {id:"24h", duration:"24 Hours", one:35, two:50},
+  {id:"7d", duration:"7 Days", one:200, two:300},
+  {id:"30d", duration:"1 Month", one:800, two:1200}
+];
+
+let deviceCount = 1;
+let selected = null;
+
+function renderPackages() {
+  const container = document.getElementById("packages");
+  container.innerHTML = "";
+
+  packages.forEach(item => {
+    const price = deviceCount === 1 ? item.one : item.two;
+    const isSelected = selected === item.id;
+
+    const card = document.createElement("div");
+    card.className = "package" + (isSelected ? " selected" : "");
+
+    card.innerHTML = `
+      <h3>⏱️ ${item.duration}</h3>
+      <div class="price">KSh ${price.toLocaleString()}</div>
+      <p>♾️ Unlimited data</p>
+      <button type="button">${isSelected ? "✓ Selected" : "Choose Package"}</button>
+    `;
+
+    card.querySelector("button").addEventListener("click", () => {
+      selected = item.id;
+      renderPackages();
+      updateSelection();
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function changeDevices(count) {
+  deviceCount = count;
+
+  document.getElementById("oneDevice")
+    .classList.toggle("active", count === 1);
+
+  document.getElementById("twoDevices")
+    .classList.toggle("active", count === 2);
+
+  document.getElementById("oneDevice")
+    .setAttribute("aria-pressed", count === 1);
+
+  document.getElementById("twoDevices")
+    .setAttribute("aria-pressed", count === 2);
+
+  renderPackages();
+  updateSelection();
+}
+
+function updateSelection() {
+  const item = packages.find(p => p.id === selected);
+  const display = document.getElementById("selectedPackage");
+
+  if (!item) {
+    display.textContent = "Please select a package above.";
+    return;
+  }
+
+  const price = deviceCount === 1 ? item.one : item.two;
+
+  display.textContent =
+    `${item.duration} | ${deviceCount} device(s) | KSh ${price.toLocaleString()}`;
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+renderPackages();
+</script>
+
+</body>
+      </html>
+      
